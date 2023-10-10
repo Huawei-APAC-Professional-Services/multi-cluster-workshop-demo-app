@@ -5,8 +5,13 @@ resources:
 - ../base
 
 patches:
-- path: patch.yaml
+- path: ingress-patch.yaml
   target:
     kind: Ingress
     name: app
+    namespace: webapp
+- path: deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: app-deployment
     namespace: webapp
