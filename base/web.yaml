@@ -78,8 +78,7 @@ metadata:
   namespace: webapp
 spec:
   rules: 
-  - host: ''
-    http: 
+  - http: 
       paths: 
       - path: '/'
         backend: 
