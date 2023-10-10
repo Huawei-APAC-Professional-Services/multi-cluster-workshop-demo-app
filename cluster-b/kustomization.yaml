@@ -7,6 +7,6 @@ resources:
 patches:
 - path: patch.yaml
   target:
-    kind: Service
+    kind: Ingress
     name: app
     namespace: webapp

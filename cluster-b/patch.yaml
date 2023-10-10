@@ -1,9 +1,10 @@
-apiVersion: v1
-kind: Service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: app
   annotations:
     kubernetes.io/elb.class: performance
+    kubernetes.io/elb.port: '80'
     kubernetes.io/elb.autocreate: '{
       "name": "cluster-a",
       "type": "public",
@@ -16,6 +17,5 @@ metadata:
          "ap-southeast-1a",
          "ap-southeast-1b"
       ],
-      "l4_flavor_name": "L4_flavor.elb.s1.small"
+      "l7_flavor_name": "L7_flavor.elb.s1.small"
      }'
-    kubernetes.io/elb.lb-algorithm: ROUND_ROBIN

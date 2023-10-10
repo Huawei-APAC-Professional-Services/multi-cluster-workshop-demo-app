@@ -69,4 +69,25 @@ spec:
     nodePort: 0
     port: 80
     protocol: TCP
-  type: LoadBalancer
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app
+  namespace: webapp
+spec:
+  rules: 
+  - host: ''
+    http: 
+      paths: 
+      - path: '/'
+        backend: 
+          service:
+            name: app
+            port: 
+              number: 80
+        property:
+          ingress.beta.kubernetes.io/url-match-mode: STARTS_WITH
+        pathType: ImplementationSpecific
+  ingressClassName: cce
