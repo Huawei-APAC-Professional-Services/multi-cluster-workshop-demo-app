@@ -14,8 +14,8 @@ metadata:
       "bandwidth_sharetype": "PER",
       "eip_type": "5_bgp",
       "available_zone": [
-         "ap-southeast-3a",
-         "ap-southeast-3e"
+         "ap-southeast-2b",
+         "ap-southeast-2c"
       ],
       "l7_flavor_name": "L7_flavor.elb.s1.small"
      }'
